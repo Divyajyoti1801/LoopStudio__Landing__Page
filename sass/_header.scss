@@ -1,0 +1,101 @@
+.header{
+    @include flex(column,space-between,flex-start);
+    background-image: url('../images/desktop/image-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem $padding-LR;
+    
+    @include break($bp-air){
+        padding: 6rem $padding-Lr;
+       
+    }
+    @include break($bp-xr){
+        padding: 0 ;
+        background-size: cover;
+    }
+    
+    
+    &__nav{
+       width: 100%;
+       
+       @include flex(row,space-between,center);
+       
+       @include break($bp-air){
+            position: relative;
+            padding: 2rem;
+            // background: $color-Black;
+        }
+
+       &--main-nav{
+        @include flex(row,space-between,center);
+        @include break($bp-air){
+            position: absolute;
+            flex-direction: column;
+            align-items: flex-start;
+            background: $color-Black;
+            top:100%;
+            left: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: none;
+        }
+        @include break($bp-xr){
+            height: 100vh;
+        }
+
+        &--link{
+            text-decoration: none;
+            color:$color-White;
+            padding: 1rem 0;
+            border-bottom: 2px solid  transparent;
+            transition: $transition;
+            @include break($bp-air){
+                font-family:  $font-family-Jose;
+                font-size: $font-family-Jose;
+            }
+            &:is(:hover, :active){
+                border-color: $color-White;
+            }
+            &:not(:last-child){
+                margin-right: 2.6rem;
+                @include break($bp-air){
+                    margin-right: 0;
+                }
+
+            }
+        }
+       }
+       &--mobile-nav{
+        display: none;
+        @include break($bp-air){
+            display: block;
+        }
+
+       }
+    }
+    
+    &__content{
+        width: 100%;
+        padding: 15.4rem 0;
+    
+
+        &--text-box{
+            width: 50%;
+            @include break($bp-air){
+                width: 100%;
+            }
+
+            border:3px solid $color-White;
+            &--text{
+                color:$color-White;
+                padding: 4.6rem 3.6rem;
+                font-family: $font-family-Jose;
+                font-weight: $font-weight-j;
+                text-transform: uppercase;
+                font-size: $font-size-header;
+            }
+        }
+        
+    }
+    
+}

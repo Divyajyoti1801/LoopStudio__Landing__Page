@@ -1,1 +1,136 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 25.875em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Alata", sans-serif;
+  font-weight: "Alata", sans-serif;
+  font-size: 1.5rem;
+  color: hsl(0deg, 0%, 55%);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 13.6rem;
+}
+@media only screen and (max-width: 51.25em) {
+  .header {
+    padding: 6rem 5.6rem;
+  }
+}
+@media only screen and (max-width: 25.875em) {
+  .header {
+    padding: 0;
+    background-size: cover;
+  }
+}
+.header__nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 51.25em) {
+  .header__nav {
+    position: relative;
+    padding: 2rem;
+  }
+}
+.header__nav--main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 51.25em) {
+  .header__nav--main-nav {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    background: hsl(0deg, 0%, 0%);
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: none;
+  }
+}
+@media only screen and (max-width: 25.875em) {
+  .header__nav--main-nav {
+    height: 100vh;
+  }
+}
+.header__nav--main-nav--link {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+  padding: 1rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+@media only screen and (max-width: 51.25em) {
+  .header__nav--main-nav--link {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: "Josefin Sans", sans-serif;
+  }
+}
+.header__nav--main-nav--link:is(:hover, :active) {
+  border-color: hsl(0deg, 0%, 100%);
+}
+.header__nav--main-nav--link:not(:last-child) {
+  margin-right: 2.6rem;
+}
+@media only screen and (max-width: 51.25em) {
+  .header__nav--main-nav--link:not(:last-child) {
+    margin-right: 0;
+  }
+}
+.header__nav--mobile-nav {
+  display: none;
+}
+@media only screen and (max-width: 51.25em) {
+  .header__nav--mobile-nav {
+    display: block;
+  }
+}
+.header__content {
+  width: 100%;
+  padding: 15.4rem 0;
+}
+.header__content--text-box {
+  width: 50%;
+  border: 3px solid hsl(0deg, 0%, 100%);
+}
+@media only screen and (max-width: 51.25em) {
+  .header__content--text-box {
+    width: 100%;
+  }
+}
+.header__content--text-box--text {
+  color: hsl(0deg, 0%, 100%);
+  padding: 4.6rem 3.6rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 6.2rem;
+}/*# sourceMappingURL=main.css.map */

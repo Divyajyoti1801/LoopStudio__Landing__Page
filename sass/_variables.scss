@@ -1,0 +1,56 @@
+
+
+//Font-Variables
+$font-family-Alata:'Alata', sans-serif;
+$font-family-Jose: 'Josefin Sans', sans-serif;
+$font-size:1.5rem;
+$font-size-header:6.2rem;
+$font-size-sub-header:4.8rem;
+$font-weight-a:400;
+$font-weight-j:300;
+
+//Primary Color
+$color-White: hsl(0, 0%, 100%);
+$color-Black: hsl(0, 0%, 0%);
+$color-Dark-Grey: hsl(0, 0%, 55%);
+$color-Very-Dark-Grey: hsl(0, 0%, 41%);
+
+
+//Some Standards 
+$padding-LR: 13.6rem;
+$padding-Lr:5.6rem;
+$padding-lr:1.8rem;
+$transition: all .25s ease;
+
+//Breakpoints
+$bp-xr:25.875em;
+$bp-air:51.25em;
+
+//Mixin Function 
+@mixin flex($dir,$just,$align){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin btn{
+    font-size:$font-size;
+    font-family: $font-family-Alata;
+    font-weight: $font-weight-a;
+    color:$color-Black;
+    background: none;
+    border:2px solid $color-Black;
+    cursor:pointer;
+}
+
+@mixin btn-hover{
+    background: $color-Black;
+    color: $color-White;
+}
+
+@mixin break($bp) {
+    @media only screen and (max-width:$bp) {
+        @content;
+    }
+}

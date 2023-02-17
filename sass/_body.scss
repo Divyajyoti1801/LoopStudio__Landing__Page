@@ -1,0 +1,22 @@
+
+html{
+    font-size: 62.5%;
+    @include break($bp-xr){
+        font-size: 50%;
+    }
+}
+
+
+*,*::after,*::before{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: $font-family-Alata;
+    font-weight: $font-family-Alata;
+    font-size: $font-size;
+    color:$color-Dark-Grey;
+}
