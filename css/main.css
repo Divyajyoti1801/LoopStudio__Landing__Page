@@ -3,6 +3,11 @@
 html {
   font-size: 62.5%;
 }
+@media only screen and (max-width: 51.25em) {
+  html {
+    font-size: 58%;
+  }
+}
 @media only screen and (max-width: 25.875em) {
   html {
     font-size: 50%;
@@ -24,86 +29,91 @@ body {
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 3.4rem 11.6rem;
+  height: 100vh;
   background-image: url("../images/desktop/image-hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 6rem 13.6rem;
-}
-@media only screen and (max-width: 51.25em) {
-  .header {
-    padding: 6rem 5.6rem;
-  }
 }
 @media only screen and (max-width: 25.875em) {
   .header {
+    background-image: url("../images/mobile/image-hero.jpg");
     padding: 0;
-    background-size: cover;
   }
 }
 .header__nav {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem 2rem 0 2rem;
 }
 @media only screen and (max-width: 51.25em) {
   .header__nav {
     position: relative;
-    padding: 2rem;
+    padding-top: 7rem;
   }
-}
-.header__nav--main-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 @media only screen and (max-width: 51.25em) {
   .header__nav--main-nav {
     position: absolute;
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
-    background: hsl(0deg, 0%, 0%);
+    padding: 2rem;
+    padding-top: 10rem;
+    background: black;
+    width: 100%;
+    height: 70vh;
     top: 100%;
     left: 0;
-    width: 100%;
-    padding: 1rem 2rem;
     display: none;
+    transition: all 0.25s ease;
   }
 }
 @media only screen and (max-width: 25.875em) {
   .header__nav--main-nav {
+    padding-top: 10rem;
     height: 100vh;
   }
 }
 .header__nav--main-nav--link {
   text-decoration: none;
   color: hsl(0deg, 0%, 100%);
-  padding: 1rem 0;
-  border-bottom: 2px solid transparent;
+  position: relative;
+  padding-bottom: 0.6rem;
   transition: all 0.25s ease;
 }
 @media only screen and (max-width: 51.25em) {
   .header__nav--main-nav--link {
     font-family: "Josefin Sans", sans-serif;
-    font-size: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
   }
 }
-.header__nav--main-nav--link:is(:hover, :active) {
-  border-color: hsl(0deg, 0%, 100%);
+.header__nav--main-nav--link::after {
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  background: transparent;
+  height: 2px;
+  width: 40%;
+  transition: all 0.25s ease;
 }
 .header__nav--main-nav--link:not(:last-child) {
-  margin-right: 2.6rem;
+  margin-right: 2.8rem;
 }
 @media only screen and (max-width: 51.25em) {
   .header__nav--main-nav--link:not(:last-child) {
     margin-right: 0;
+    margin-bottom: 5.2rem;
   }
+}
+.header__nav--main-nav--link:hover::after, .header__nav--main-nav--link:active::after {
+  background: hsl(0deg, 0%, 100%);
 }
 .header__nav--mobile-nav {
   display: none;
@@ -111,14 +121,26 @@ body {
 @media only screen and (max-width: 51.25em) {
   .header__nav--mobile-nav {
     display: block;
+    transition: all 0.25s ease;
   }
 }
 .header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
-  padding: 15.4rem 0;
+  height: 100%;
+  padding: 0 2rem;
+}
+@media only screen and (max-width: 25.875em) {
+  .header__content {
+    justify-content: center;
+  }
 }
 .header__content--text-box {
   width: 50%;
+  padding: 4.2rem 3.2rem;
   border: 3px solid hsl(0deg, 0%, 100%);
 }
 @media only screen and (max-width: 51.25em) {
@@ -128,9 +150,8 @@ body {
 }
 .header__content--text-box--text {
   color: hsl(0deg, 0%, 100%);
-  padding: 4.6rem 3.6rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
   text-transform: uppercase;
   font-size: 6.2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
 }/*# sourceMappingURL=main.css.map */

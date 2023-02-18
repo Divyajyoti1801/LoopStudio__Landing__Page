@@ -1,101 +1,114 @@
+
 .header{
-    @include flex(column,space-between,flex-start);
-    background-image: url('../images/desktop/image-hero.jpg');
-    background-repeat: no-repeat;
+    padding: 3.4rem calc($padding-LR - 2rem);
+    height: 100vh;
+    background-image: url('../images/desktop/image-hero.jpg') ;
+    background-repeat:no-repeat;
     background-size: cover;
-    padding: 6rem $padding-LR;
-    
-    @include break($bp-air){
-        padding: 6rem $padding-Lr;
-       
-    }
     @include break($bp-xr){
-        padding: 0 ;
-        background-size: cover;
+        background-image: url('../images/mobile/image-hero.jpg');
+        padding: 0
     }
-    
-    
+
+
+    //Header Navigation styling
     &__nav{
-       width: 100%;
-       
-       @include flex(row,space-between,center);
-       
-       @include break($bp-air){
-            position: relative;
-            padding: 2rem;
-            // background: $color-Black;
-        }
-
-       &--main-nav{
         @include flex(row,space-between,center);
+        padding: 2rem 2rem 0 2rem;
         @include break($bp-air){
-            position: absolute;
-            flex-direction: column;
-            align-items: flex-start;
-            background: $color-Black;
-            top:100%;
-            left: 0;
-            width: 100%;
-            padding: 1rem 2rem;
-            display: none;
+            position: relative;
+            padding-top: 7rem;
         }
-        @include break($bp-xr){
-            height: 100vh;
-        }
-
-        &--link{
-            text-decoration: none;
-            color:$color-White;
-            padding: 1rem 0;
-            border-bottom: 2px solid  transparent;
-            transition: $transition;
+        // background: $color-Black;
+        
+        &--main-nav{
             @include break($bp-air){
-                font-family:  $font-family-Jose;
-                font-size: $font-family-Jose;
-            }
-            &:is(:hover, :active){
-                border-color: $color-White;
-            }
-            &:not(:last-child){
-                margin-right: 2.6rem;
-                @include break($bp-air){
-                    margin-right: 0;
-                }
-
-            }
-        }
-       }
-       &--mobile-nav{
-        display: none;
-        @include break($bp-air){
-            display: block;
-        }
-
-       }
-    }
-    
-    &__content{
-        width: 100%;
-        padding: 15.4rem 0;
-    
-
-        &--text-box{
-            width: 50%;
-            @include break($bp-air){
+                position: absolute;
+                @include flex(column,flex-start,flex-start);
+                padding: 2rem;
+                padding-top: 10rem;
+                background: black;
                 width: 100%;
+                height: 70vh;
+                top:100%;
+                left: 0;
+                display: none;
+                transition: $transition;
             }
-
-            border:3px solid $color-White;
-            &--text{
+            @include break($bp-xr){
+                padding-top: 10rem;
+                height: 100vh;
+            }
+            &--link{
+                text-decoration: none;
                 color:$color-White;
-                padding: 4.6rem 3.6rem;
-                font-family: $font-family-Jose;
-                font-weight: $font-weight-j;
-                text-transform: uppercase;
-                font-size: $font-size-header;
+                position: relative;
+                padding-bottom: 0.6rem;
+                transition: $transition;
+                @include break($bp-air){
+                    font-family: $font-family-Jose;
+                    font-weight: $font-weight-j;
+                    text-transform: uppercase;
+                }
+                &::after{
+                    content: "";
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    background: transparent;
+                    height: 2px;
+                    width: 40%;
+                    transition: $transition;
+                }
+                
+                &:not(:last-child){
+                    margin-right: 2.8rem;
+                    @include break($bp-air){
+                        margin-right:0;
+                        margin-bottom: 5.2rem;
+                    }
+                }
+            
+                &:hover,&:active{
+                   &::after{
+                     background: $color-White;
+                   }
+                }
             }
         }
         
+        &--mobile-nav{
+            display: none;
+            @include break($bp-air){
+                display: block;
+                transition: $transition;
+            }
+        }
     }
-    
+
+    &__content{
+        @include flex(row,flex-start,center);
+        width: 100%;
+        height: 100%;
+        padding:  0 2rem;
+        @include break($bp-xr){
+            justify-content: center;
+        }
+        &--text-box{
+            width: 50%;
+            padding: 4.2rem 3.2rem;
+            @include break($bp-air){
+                width: 100%;
+            }
+            border: 3px solid $color-White;
+            &--text{
+                color:$color-White;
+                text-transform: uppercase;
+                font-size: $font-size-header;
+                font-family: $font-family-Jose;
+                font-weight: $font-weight-j;
+            }
+        }
+    }
 }
