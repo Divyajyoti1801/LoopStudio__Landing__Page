@@ -92,16 +92,16 @@
         width: 100%;
         height: 100%;
         padding:  0 2rem;
-        @include break($bp-xr){
+        @include break($bp-air){
             justify-content: center;
         }
         &--text-box{
             width: 50%;
-            padding: 4.2rem 3.2rem;
+            padding:3.2rem;
             @include break($bp-air){
                 width: 100%;
             }
-            border: 3px solid $color-White;
+            border: 2px solid $color-White;
             &--text{
                 color:$color-White;
                 text-transform: uppercase;

@@ -2,10 +2,10 @@
 html{
     font-size: 62.5%;
     @include break($bp-air){
-        font-size: 58%;
+        font-size: 55%;
     }
     @include break($bp-xr){
-        font-size: 50%;
+        font-size: 40%;
     }
 }
 
