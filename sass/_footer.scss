@@ -1,0 +1,98 @@
+.footer{
+    @include flex(row,space-between,center);
+    background:$color-Black;
+    padding: 4rem $padding-LR;
+    @include break($bp-air){
+        padding: 4rem $padding-Lr;
+    }
+    @include break($bp-xr){
+        padding: 6.8rem $padding-lr;
+        flex-direction: column;
+    }
+    &__header{
+        @include flex(column,space-between,flex-start);
+        @include break($bp-xr){
+            align-items: center;
+            margin-bottom: 5.6rem;
+        }
+        &--logo{
+            margin-bottom:2.8rem;
+            @include break($bp-xr){
+                margin-bottom: 4.2rem;
+            }
+        }
+        &--nav{
+            @include flex(row,space-between,flex-start);
+            @include break($bp-xr){
+                flex-direction: column;
+                align-items: center;
+            }
+            &--item{
+                text-decoration: none;
+                color:$color-White;
+                position: relative;
+                &::after{
+                    content: "";
+                    top:120%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 1px;
+                    width: 60%;
+                    background:transparent;
+                    position: absolute;
+                    transition: $transition;
+                }
+                &:is(:active,:hover){
+                    &::after{
+                        background: $color-White;
+                    }
+                }
+                &:not(:last-child){
+                    margin-right: 2.8rem;
+                    @include break($bp-xr){
+                        margin-right: 0;
+                        margin-bottom: 3.4rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__contact{
+        @include flex(column,space-between,flex-end);
+        @include break($bp-xr){
+            flex-direction: column;
+            align-items: center;
+        }
+        &--list{
+            @include flex(row,space-between,center);
+            margin-bottom: 1.4rem;
+            &--item{
+                text-decoration: none;
+                position:relative;
+                &::after{
+                    content: "";
+                    top:120%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 1px;
+                    width: 60%;
+                    background:transparent;
+                    position: absolute;
+                    transition: $transition;
+                }
+                &:is(:active,:hover){
+                    &::after{
+                        background: $color-White;
+                    }
+                }
+                &:not(:last-child){
+                    margin-right: 1rem;
+                    @include break($bp-xr){
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 
 html{
     font-size: 62.5%;
+    
     @include break($bp-air){
         font-size: 55%;
     }

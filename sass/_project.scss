@@ -1,0 +1,153 @@
+.project{
+    padding: 0 $padding-LR 17.8rem $padding-LR;
+    @include flex(column,center,center);
+    @include break($bp-air){
+        padding: 0 $padding-Lr 17.8rem $padding-Lr;
+    }
+    @include break($bp-xr){
+        padding: 0 $padding-lr 12rem $padding-lr;
+    }
+    
+    &__header{
+        @include flex(row,space-between,center);
+        width: 100%;
+        margin-bottom: 8.2rem;
+        @include break($bp-xr){
+            margin-bottom: 6rem;
+            justify-content: center;
+        }
+        &--heading{
+            font-size: $font-size-sub-header;
+            font-family: $font-family-Jose;
+            font-weight: $font-weight-j;
+            text-transform: uppercase;
+            color:$color-Black;
+            @include break($bp-xr){
+                width: 100%;
+                text-align: center;
+            }
+        }
+        &--cta{
+            @include btn;
+            &:is(:hover,:active){
+                @include btn-hover;
+            }
+            @include break($bp-xr){
+                display: none;
+            }
+            
+        }
+    }
+    &__item{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 2.8rem;
+        @include break($bp-air){
+            grid-template-columns: repeat(2,50%);
+            grid-template-rows: repeat(4,1fr);
+        }
+        @include break($bp-xr){
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(8,min-content);
+            margin-bottom: 2.8rem;
+        }
+        &--items{
+            position: relative;
+            cursor: pointer;
+            transition: $transition;
+            &--img{
+                filter: brightness(90%);
+                width: 100%;
+                height: 100%;
+            }
+            &--text{
+                text-transform: upper;
+                font-family: $font-family-Jose;
+                font-weight: $font-weight-j;
+                color:$color-White;
+                font-size: 3rem;
+                position: absolute;
+                width: 60%;
+                text-align: left;
+                bottom: 10%;
+                left: 20%;
+                z-index: 4;
+                transition: $transition;
+            }
+
+            &:hover,&:active{
+                &::before{
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background:$color-White;
+                opacity: 0.7;
+                z-index: 2;
+                transition: $transition;
+                }
+            }
+            &:is(:hover,:active) &--text{
+                color:$color-Black;
+            }
+
+            @include break($bp-xr){
+                &--1{
+                    &--img{
+                        content: url('../images/mobile/image-deep-earth.jpg');
+                    }
+                }
+                &--2{
+                    &--img{
+                        content: url('../images/mobile/image-night-arcade.jpg');
+                    }
+                }
+                &--3{
+                    &--img{
+                        content: url('../images/mobile/image-soccer-team.jpg');
+                    }
+                }
+                &--4{
+                    &--img{
+                        content: url('../images/mobile/image-grid.jpg');
+                    }
+                }
+                &--5{
+                    &--img{
+                        content: url('../images/mobile/image-from-above.jpg');
+                    }
+                }
+                &--6{
+                    &--img{
+                        content: url('../images/mobile/image-pocket-borealis.jpg');
+                    }
+                }
+                &--7{
+                    &--img{
+                        content: url('../images/mobile/image-curiosity.jpg');
+                    }
+                }
+                &--8{
+                    &--img{
+                        content: url('../images/mobile/image-fisheye.jpg');
+                    }
+                }
+            }
+           
+           
+        }
+    }
+
+    &__cta{
+        display: none;
+        @include break($bp-xr){
+            display: block;
+            @include btn;
+            &:is(:hover,:active){
+                @include btn-hover;
+            }
+        }
+    }
+
+}

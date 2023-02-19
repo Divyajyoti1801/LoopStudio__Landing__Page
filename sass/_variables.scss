@@ -23,8 +23,8 @@ $padding-lr:1.8rem;
 $transition: all .25s ease;
 
 //Breakpoints
-$bp-xr:25.875em;
-$bp-air:51.25em;
+$bp-xr:33.75em;
+$bp-air:64em;
 
 //Mixin Function 
 @mixin flex($dir,$just,$align){
@@ -39,9 +39,11 @@ $bp-air:51.25em;
     font-family: $font-family-Alata;
     font-weight: $font-weight-a;
     color:$color-Black;
+    padding: 1.2rem 3.6rem;
     background: none;
     border:2px solid $color-Black;
     cursor:pointer;
+    transition: $transition;
 }
 
 @mixin btn-hover{
