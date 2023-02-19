@@ -1,6 +1,6 @@
 
 .header{
-    padding: 3.4rem calc($padding-LR - 2rem);
+    padding: 3.4rem $padding-LR-body;
     height: 100vh;
     background-image: url('../images/desktop/image-hero.jpg') ;
     background-repeat:no-repeat;
